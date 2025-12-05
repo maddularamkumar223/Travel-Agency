@@ -1,11 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
+    <link rel="stylesheet" href="../bootstrap/bootstrap.css" />
+    <link rel="stylesheet" href="../registration/registration.css" />
+  </head>
+  <body>
     <h1>I am a login page</h1>
-</body>
+    <main>
+      <section class="container">
+        <form action="" class="row">
+          <aside class="col-12 col-md-6">
+            <label for="email">Email</label>
+            <input type="email" placeholder="Enter Your Email" name="email" />
+          </aside>
+          <aside class="col-12 col-md-6">
+            <label for="password">Password</label>
+            <input
+              type="password"
+              name="password"
+              id="password"
+              placeholder="Enter the password"
+            />
+          </aside>
+          <aside class="col-12 text-center">
+            <button>Submit</button>
+          </aside>
+        </form>
+      </section>
+    </main>
+    <script src="./login.js"></script>
+    <script src="../bootstrap//bootstrap.js"></script>
+  </body>
 </html>
