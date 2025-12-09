@@ -14,6 +14,7 @@ let navigationData = [
   { label: "About Us", path: "../aboutus/about.html" },
   { label: "Contact Us", path: "../contactus/contact.html" },
   { label: "booking", path: "../booking/booking.html" },
+  { label: "Add Places", path:"../addPlaces/addPlaces.html" },
 ];
 let profileData = [
   { label: "BH", path: "#" },
