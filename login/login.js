@@ -15,6 +15,7 @@ let validation = async (email, password) => {
   if (singleUser) {
     alert("login Successful");
     location.href = "../homepage/index.html";
+    sessionStorage.setItem("id",singleUser.id)
   } else {
     alert("Invalid Credentials");
     location.href = "../registration/register.html";
