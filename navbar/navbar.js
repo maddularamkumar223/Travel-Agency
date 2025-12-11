@@ -14,25 +14,50 @@ let navigationData = [
   { label: "About Us", path: "../aboutus/about.html" },
   { label: "Contact Us", path: "../contactus/contact.html" },
   { label: "booking", path: "../booking/booking.html" },
-  { label: "Add Places", path:"../addPlaces/addPlaces.html" },
+  { label: "Add Places", path: "../addPlaces/addPlaces.html" },
 ];
 let profileData = [
   { label: "BH", path: "#" },
   { label: "Notification", path: "#" },
   { label: "Sign Up", path: "../registration/register.html" },
   { label: "Log In", path: "../login/login.html" },
+  { label: "Log Out" },
 ];
+
+let userId = sessionStorage.getItem("id");
+let clearLogin = () => {
+  sessionStorage.removeItem("id");
+  location.reload();
+};
 let createNavbar = (data, appendValues) => {
   let ul = document.createElement("ul");
   data.map((value) => {
     let li = document.createElement("li");
     let button = document.createElement("button");
+    let buttonContainer = document.createElement("aside");
     li.className = "col";
+    if (value.label == "Sign Up" || value.label == "Log In") {
+      if (!userId) {
+        button.innerHTML = value.label;
+        buttonContainer.append(button);
+        li.append(buttonContainer);
+      }
+    } else {
+      button.innerHTML = value.label;
+      li.append(button);
+    }
+    if (value.label == "Log Out") {
+      if (!userId) {
+        button.style.display = "none";
+      }
+      button.addEventListener("click", clearLogin);
+    }
     button.addEventListener("click", () => {
-      location.href = value.path;
+      if (value.path) {
+        location.href = value.path;
+      }
     });
-    button.innerHTML = value.label;
-    li.append(button);
+    button.className = value.label;
     ul.append(li);
   });
   ul.classList = "row";
