@@ -28,6 +28,7 @@ form.addEventListener("submit", (e) => {
     email: formData.get("email"),
     persons: persons,
     places: package,
+    notification: false,
   };
   let place = places.find((value) => value.placeName === package);
   if (userId) {

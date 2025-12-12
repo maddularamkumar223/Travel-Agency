@@ -58,19 +58,30 @@
   "bookings": [
     {
       "id": "1",
-      "bookingDate": "2025-12-18",
+      "bookingDate": "2025-12-15",
       "contact": "123456789",
-      "email": "ram@gmail.com",
+      "email": "abc@gmail.com",
       "persons": "4",
-      "places": "Delhi"
+      "places": "Agra",
+      "notification": true
     },
     {
       "id": "1",
-      "bookingDate": "2026-01-01",
+      "bookingDate": "2025-12-16",
       "contact": "123456789",
-      "email": "ram@gmail.com",
-      "persons": "4",
-      "places": "Agra"
+      "email": "abc@gmail.com",
+      "persons": "6",
+      "places": "Delhi",
+      "notification": false
+    },
+    {
+      "id": "6f8e",
+      "bookingDate": "2025-12-26",
+      "contact": "123456789",
+      "email": "ravi@gmail.com",
+      "persons": "6",
+      "places": "Delhi",
+      "notification": false
     }
   ]
 }
