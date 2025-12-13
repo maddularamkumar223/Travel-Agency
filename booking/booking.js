@@ -22,7 +22,7 @@ form.addEventListener("submit", (e) => {
   let package = formData.get("package");
   let persons = formData.get("persons");
   let bookingDetails = {
-    id: userId,
+    userId: userId,
     bookingDate: formData.get("date"),
     contact: formData.get("contact"),
     email: formData.get("email"),
@@ -38,6 +38,7 @@ form.addEventListener("submit", (e) => {
         persons * place.price
       }`
     );
+    location.href = "../homepage/index.html";
   } else {
     location.href = "../login/login.html";
   }

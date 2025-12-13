@@ -4,7 +4,7 @@ let data = async () => {
   let response = await fetch("http://localhost:3000/bookings");
   let data = await response.json();
   let filterHistory = data.filter(
-    (value) => value.id === sessionStorage.getItem("id")
+    (value) => value.userId === sessionStorage.getItem("id")
   );
 
   filterHistory.map((value) => {

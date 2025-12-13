@@ -40,9 +40,11 @@ let notificationData = async () => {
   let response = await fetch(`http://localhost:3000/bookings`);
   let data = await response.json();
   let filterUserNNotifications = data.filter(
-    (value) => value.notification === false && value.id === userId
+    (value) => value.notification === false && value.userId === userId
   );
   sessionStorage.setItem("length", filterUserNNotifications.length);
+  let sup = document.querySelector("sup");
+  sup.innerHTML = sessionStorage.getItem("length");
 };
 
 // ! Make the notification value Zero
@@ -81,7 +83,7 @@ let createNavbar = (data, appendValues) => {
 
     if (value.label === "Notification") {
       let sup = document.createElement("sup");
-      sup.innerHTML = sessionStorage.getItem("length") || 0;
+      sup.innerHTML = sessionStorage.getItem("length");
       button.append(sup);
     }
     // ! If the path is present then  it should work
@@ -99,3 +101,30 @@ let createNavbar = (data, appendValues) => {
 createNavbar(navigationData, navigationBlock);
 createNavbar(profileData, profileBlock);
 notificationData();
+
+// let notificationValue = async () => {
+//   let response = await fetch(`http://localhost:3000/bookings`);
+//   let data = await response.json();
+
+//   let filterUserNNotifications = data.filter(
+//     (value) =>
+//       value.notification === false &&
+//       value.userId === sessionStorage.getItem("id")
+//   );
+
+//   if (filterUserNNotifications.length > 0) {
+//     for (let value of filterUserNNotifications) {
+//       await seenTrue(value.id);
+//     }
+//   }
+//   sessionStorage.setItem("length", filterUserNNotifications.length);
+// };
+// let seenTrue = async (id) => {
+//   await fetch(`http://localhost:3000/bookings/${id}`, {
+//     method: "PATCH",
+//     headers: {
+//       "content-type": "application/json",
+//     },
+//     body: JSON.stringify({ notification: true }),
+//   });
+// };
